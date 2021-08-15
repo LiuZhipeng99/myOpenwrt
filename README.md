@@ -12,4 +12,4 @@ centos8编译网易云解锁可能需要`yum install glibc-devel.i686 libgcc.i68
 
 编译经验：由于vps内存不足1G编译nodejs失败（qbtorrent更大），通过`du -l --max-depth=1 | sort -n`查看build_dir/target-mips下文件看到node文件夹有七百M（build_dir就有20G以上），把这个编译成功的文件夹替换到小vps上，两个主机传输：`tar cf - src_dir | ssh user@dst_host "cd /dst_dir && tar xvf -"` 
 
-编译个ipk测试： ` make -j2 package/lean/luci-app-jd-dailybonus/compile ` ，编译成功
+编译个ipk测试： ` make -j2 package/lean/luci-app-jd-dailybonus/compile ` ，还不行
