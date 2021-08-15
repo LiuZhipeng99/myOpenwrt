@@ -182,10 +182,10 @@ jobs:
           EOF
           [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer Download (24hrs)](${{ steps.cowtransfer.outputs.url }})" >> release.txt
           [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer Download (7days)](${{ steps.wetransfer.outputs.url }})" >> release.txt          
- 
+          tar -zcvf ${{ env.FIRMWARE }}/build.tar.gz openwrt/bin
           echo "::set-output name=status::success"
 
-# 定制发行文件
+# 发行文件（定制文件在tag里） 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
