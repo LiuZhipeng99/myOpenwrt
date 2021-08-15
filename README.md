@@ -2,6 +2,13 @@
 
 **[原项目](https://github.com/P3TERX/Actions-OpenWrt)** 含配置和进阶教程
 
+
+## 编译的IPK集合
+
+编译了mipsel_24kc架构的ipk也在[Release](https://github.com/kivid/myOpenwrt/releases)
+
+mipsel_24kc的cpu有MT7621/MT7621/MT76x8/RT288X/RT3x5x/RT5350/RT3662/RT3883
+
 [恩山的L大插件解释](https://www.right.com.cn/forum/thread-344825-1-1.html)
 
 本地编译单个ipk[方法](https://jarviswwong.com/compile-ipk-separately-with-openwrt.html)，需先编译kernel和luci-base
