@@ -2,7 +2,7 @@
 
 [恩山的L大插件解释](https://www.right.com.cn/forum/thread-344825-1-1.html)
 
-编译单个ipk[方法]()
+本地编译单个ipk[方法](https://jarviswwong.com/compile-ipk-separately-with-openwrt.html)，需先编译kernel和luci-base
 
 自动收集ipkhttps://github.com/yfdoor/OpenWrt-Packages
 
