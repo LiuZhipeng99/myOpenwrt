@@ -15,3 +15,5 @@ src-git small https://github.com/kenzok8/small
 #src-git targets https://github.com/openwrt/targets.git
 #src-git oldpackages http://git.openwrt.org/packages.git
 #src-link custom /usr/src/openwrt/custom-feed
+
+# https://github.com/WangWenBin2017/OpenWrt-SSRPLUS/blob/main/feeds.conf.default 有更丰富的源
