@@ -5,7 +5,7 @@ src-git routing https://git.openwrt.org/feed/routing.git
 src-git telephony https://git.openwrt.org/feed/telephony.git
 
 # 自定义 除了这里配置也可在diy1.sh中git clone到lede的package目录下代替
-src-git kenzo-packeages https://github.com/kenzok8/openwrt-packages
+src-git kenzopackeages https://github.com/kenzok8/openwrt-packages
 # src-git helloworld https://github.com/fw876/helloworld
 # passwall依赖
 src-git small https://github.com/kenzok8/small 
