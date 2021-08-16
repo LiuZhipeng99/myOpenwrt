@@ -15,6 +15,10 @@ on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
+      ipks:
+        description: 'Generate ipks'
+        required: false
+        default: 'false'
       ssh:
         description: 'SSH connection to Actions'
         required: false
@@ -123,6 +127,7 @@ jobs:
         #find ./ -type d -name "packages" | xargs rm -rf {}
         cd openwrt/bin/targets/*/*
         rm -rf packages
+        rm *.buildinfo -r
 
         echo "========================================"
         echo "[Space Usage]:"
@@ -186,6 +191,7 @@ jobs:
 # 文件组织
     - name: Remove and tar
       id: tar
+      if: (github.event.inputs.ipks == 'true' && github.event.inputs.ipks  != 'false') 
       run: |
          echo "Current Path:" $PWD
          rm ${{ env.FIRMWARE }}/*.buildinfo -r
