@@ -197,7 +197,7 @@ jobs:
       run: |
          echo "Current Path:" $PWD
          ls
-         tar -czf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin
+         cd openwrt && tar -czf buildsresults.tar.gz bin
          ls
          echo "打包完成"
 # rm ${{ env.FIRMWARE }}/*.buildinfo -r 在上面上传清理
