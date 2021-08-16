@@ -23,3 +23,5 @@ centos8编译网易云解锁可能需要`yum install glibc-devel.i686 libgcc.i68
 编译个ipk测试： ` make -j2 package/lean/luci-app-jd-dailybonus/compile ` ，还不行
 
 关于编译结果用哪个bin文件，从名字也看得出，这里有关于[initramfs-kernel](https://blog.csdn.net/GK_Ph/article/details/85775737)的介绍
+
+编译结果没有sysupgrade.bin的[原因和解决](https://www.right.com.cn/forum/thread-147308-1-1.html)
