@@ -194,9 +194,11 @@ jobs:
       if: (github.event.inputs.ipks == 'true' && github.event.inputs.ipks  != 'false') 
       run: |
          echo "Current Path:" $PWD
-         rm ${{ env.FIRMWARE }}/*.buildinfo -r
-         tar -zcvf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin
+         ls
+         tar -czf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin/
+         ls
          echo "打包完成"
+# rm ${{ env.FIRMWARE }}/*.buildinfo -r 在上面上传清理
 # 插件全编译执行 find openwrt/bin/packages/mipsel_24kc -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/mipsel_24kc-IPK.tar.gz 
 
 # 发行文件
