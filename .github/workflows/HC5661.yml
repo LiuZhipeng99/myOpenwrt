@@ -64,6 +64,8 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        tar -czf ./build-results.tar.gz openwrt
+        ls
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
@@ -195,7 +197,7 @@ jobs:
       run: |
          echo "Current Path:" $PWD
          ls
-         tar -czf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin/
+         tar -czf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin
          ls
          echo "打包完成"
 # rm ${{ env.FIRMWARE }}/*.buildinfo -r 在上面上传清理
