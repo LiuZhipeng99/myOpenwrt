@@ -177,20 +177,26 @@ jobs:
           2、分支：${{ env.REPO_BRANCH }}
           3、设备：${{ env.DEVICE_NAME }}
           # -- Build with Github Actions on ${{ env.FILE_DATE }} for ${{ env.DEVICE_NAME }} device
-          
           外链下载：
           EOF
           [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer Download (24hrs)](${{ steps.cowtransfer.outputs.url }})" >> release.txt
           [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer Download (7days)](${{ steps.wetransfer.outputs.url }})" >> release.txt          
-          echo "Current Path:" $PWD
-          tar -zcvf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin
-          # find openwrt/bin/packages/mipsel_24kc -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/mipsel_24kc-IPK.tar.gz
           echo "::set-output name=status::success"
 
-# 发行文件（定制文件在tag里） 
+# 文件组织
+    - name: Remove and tar
+      id: tar
+      run: |
+         echo "Current Path:" $PWD
+         rm *.buildinfo -r
+         tar -zcvf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin
+         echo "打包完成"
+# 插件全编译执行 find openwrt/bin/packages/mipsel_24kc -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/mipsel_24kc-IPK.tar.gz 
+
+# 发行文件
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
+#      if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
