@@ -188,7 +188,7 @@ jobs:
       id: tar
       run: |
          echo "Current Path:" $PWD
-         rm *.buildinfo -r
+         rm ${{ env.FIRMWARE }}/*.buildinfo -r
          tar -zcvf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin
          echo "打包完成"
 # 插件全编译执行 find openwrt/bin/packages/mipsel_24kc -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/mipsel_24kc-IPK.tar.gz 
