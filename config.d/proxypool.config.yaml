@@ -10,16 +10,18 @@ source-files:
   - https://raw.githubusercontent.com/kivid/myOpenwrt/main/config.d/proxypoolsource.yaml
 
 # ======= 可选项，留空使用default值  =======
+# 虽然有速度上千兆的但发现是被墙了的节点，这里就不测速了用国内机
+
 
 # postgresql database info
-database_url: "postgres://postgres:postgres@159.138.153.86:5432/proxypool2" # 1有一万个节点没测速的
+database_url: "postgres://postgres:6666@159.138.153.86:5432/proxypool2" # 1有一万个节点没测速的
 
 # interval between each crawling
 crawl-interval:       # v0.5.x default 60 (minutes)
 crontime:             # v0.4.x default 60 (minutes). Deprecated in the newest version
 
 # speed test
-speedtest: true      # default false. Warning: this will consume large network resources.
+speedtest: false      # default false. Warning: this will consume large network resources.
 speedtest-interval:   # default 720 (min)
 connection:           # default 5. The number of speed test connections simultaneously
 timeout:              # default 10 (seconds).
