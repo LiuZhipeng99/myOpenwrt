@@ -162,11 +162,17 @@ jobs:
       run: |
         echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
+        cat >> release.txt << EOF 
+        1、源码：${{ env.REPO_URL }} 分支：${{ env.REPO_BRANCH }}
+        2、平台：x86_64 | mipsel
+        3、编译时间：${{ env.FILE_DATE }}
+        外链下载：
+        EOF
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "::set-output name=status::success"
-        echo "软件包目录见https://www.right.com.cn/forum/thread-344825-1-1.html" >> release.txt
-        echo "目前包括x86、mipsel_24kc平台的ipk，下载后确认SHA256是否正确！">> release.txt
+        echo "**软件包目录见 [L软件说明](https://www.right.com.cn/forum/thread-344825-1-1.html)**" >> release.txt
+        echo "下载后确认SHA256是否正确！">> release.txt
 #        echo "  x86-64-IPK.tar.gz SHA256: $(sha256sum ${{ env.FIRMWARE }}/x86-64-IPK.tar.gz | grep -oE "\w{64}")" >> release.txt
         
         
