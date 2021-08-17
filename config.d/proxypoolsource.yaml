@@ -1,11 +1,12 @@
-#  
-## 模糊抓取订阅链接
-#- type: webfuzzsub
-#  options:
-#    url: https://raw.githubusercontent.com/du5/free/master/sub.list
-#- type: webfuzzsub
-#  options:
-#    url: https://raw.githubusercontent.com/iam7cn/Clash/main/Subscription/sub.list
+# 此文件包含尽可能多的源，以供可测速国内vps测速
+
+# 模糊抓取订阅链接
+- type: webfuzzsub
+  options:
+    url: https://raw.githubusercontent.com/du5/free/master/sub.list
+- type: webfuzzsub
+  options:
+    url: https://raw.githubusercontent.com/iam7cn/Clash/main/Subscription/sub.list
 ## 谷歌搜索返回订阅列表不知道行不行 ！！点进去发现全是节点池网站。看到个72源的网站还开启测速赶紧mark下
 ## 爬半天，网站又多干脆不用
 ##- type: webfuzzsub
@@ -16,55 +17,79 @@
 - type: clash
   options:
     url: https://sspool.nl/clash/proxies #config 反而抓不到
+    
 - type: clash
   options:
     url: https://www.233660.xyz/clash/proxies 
+
+- type: clash
+  options:
+    url: https://www.qunima.cc/clash/proxies 
 # https://www.qunima.cc/ 没测速但有88个源
-#
-#
-##- type: subscribe
-##  options:
-##    url: https://gitlab.com/free9999/ipupdate/-/raw/master/SS-v2ray/ssconfig.txt
-##- type: subscribe
-##  options:
-##    url: https://gitlab.com/free9999/ipupdate/-/blob/master/SS/ssconfig.txt
-##- type: subscribe
-##  options:
-##    url: https://gitlab.com/free9999/ipupdate/-/raw/master/ssr/ssconfig.txt
-#
-#- type: clash
-#  options:
-#    url: https://gitlab.com/free9999/ipupdate/-/raw/master/clash/config.yaml
-#
-## 订阅链接
+
+
+
+- type: clash
+  options:
+    url: https://gitlab.com/free9999/ipupdate/-/raw/master/clash/config.yaml
+- type: clash
+  options:
+    url: https://proxypool.fly.dev/clash/proxies
+- type: clash
+  options:
+    url: https://hello.stgod.com/clash/proxies
+- type: clash
+  options:
+    url: https://ss.dswang.ga:8443/clash/proxies
+- type: clash
+  options:
+    url: http://8.135.91.61/clash/proxies
+- type: clash
+  options:
+    url: https://etproxypool.cf/clash/proxies	
+- type: clash
+  options:
+    url: https://etproxypool.ga/clash/proxies	
+
+- type: clash
+  options:
+    url: https://raw.githubusercontent.com/du5/free/master/file/0909/Clash.yaml
+
+# 订阅链接
 #- type: subscribe
 #  options:
 #    url: https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray
-#- type: clash
-#  options:
-#    url: https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml
-## 网页模糊抓取
-#- type: webfuzz
-#  options:
-#    url: https://merlinblog.xyz/wiki/freess.html
-#   
-#- type: webfuzz
-#  options:
-#    url: https://zfjvpn.gitbook.io/123/
-#
-## # 翻墙党论坛抓取
+- type: clash
+  options:
+    url: https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml
+# 网页模糊抓取
+- type: webfuzz
+  options:
+    url: https://merlinblog.xyz/wiki/freess.html
+   
+- type: webfuzz
+  options:
+    url: https://zfjvpn.gitbook.io/123/
+
+- type: webfuzz
+  options:
+    url: https://lightyearvpn.com/zh/free-vpn
+- type: webfuzz
+  options:
+    url: https://www.zhimianfei.com/
+
+# # 翻墙党论坛抓取
 #- type: web-fanqiangdang
 #  options:
-#    url: https://fanqiangdang.com/forum-48-1.html
-# # clash�| ��~O订�~X~E�~S��~N�
-#- type: clash
-#  options:
-#    url: https://raw.githubusercontent.com/du5/free/master/file/0909/Clash.yaml
-#
+#    url: 
+ # clash�| ��~O订�~X~E�~S��~N�
+
 ## 某个网站抓取
 #- type: web-freessrxyz
 #  options:
-#
+
+
+
 #
 ## tg频道抓取
 #- type: tgchannel
