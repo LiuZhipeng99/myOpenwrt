@@ -123,9 +123,6 @@ jobs:
         rm -rf ./tmp && rm -rf .config  
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE2 ] && mv $CONFIG_FILE2 openwrt/.config -f
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package2
       id: package2
