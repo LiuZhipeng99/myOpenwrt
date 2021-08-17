@@ -196,8 +196,8 @@ jobs:
       if: (github.event.inputs.ipks == 'true' && github.event.inputs.ipks  != 'false') 
       run: |
          echo "Current Path:" $PWD
-         ls
-         tar -czf build_results.tar.gz openwrt/bin
+         cd openwrt
+         tar -czf build_results.tar.gz bin
          mv build_results.tar.gz ${{ env.FIRMWARE }}/build_results.tar.gz
          ls
          echo "打包完成"
