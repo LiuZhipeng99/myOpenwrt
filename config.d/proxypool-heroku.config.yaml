@@ -20,8 +20,8 @@ database_url: "postgres://postgres:6666@159.138.153.86:5432/proxypool2" # 为了
 crawl-interval:       # v0.5.x default 60 (minutes)
 crontime:             # v0.4.x default 60 (minutes). Deprecated in the newest version
 
-# speed test
-speedtest: false      # default false. Warning: this will consume large network resources.
+# speed test 没有连数据库所以测速
+speedtest: true      # default false. Warning: this will consume large network resources.
 speedtest-interval:   # default 720 (min)
 connection:           # default 5. The number of speed test connections simultaneously
 timeout:              # default 10 (seconds).
