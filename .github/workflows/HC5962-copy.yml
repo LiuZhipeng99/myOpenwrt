@@ -18,11 +18,11 @@ on:
       ipks:
         description: 'Generate ipks'
         required: false
-        default: 'false'
+        default: '见build ipk工作流'
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: '见build ipk工作流'
+        default: 'false'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
