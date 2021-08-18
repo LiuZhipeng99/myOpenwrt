@@ -22,7 +22,7 @@ on:
       ssh:
         description: 'SSH connection to Actions'
         required: false
-        default: 'false'
+        default: '见build ipk工作流'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -64,7 +64,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-        tar -czf ./build-results.tar.gz openwrt
+        touch test.txt
         ls
     - name: Load custom feeds
       run: |
@@ -130,7 +130,6 @@ jobs:
         cd openwrt/bin/targets/*/*
         rm -rf packages
         rm *.buildinfo -r
-
         echo "========================================"
         echo "[Space Usage]:"
         echo "========================================"
@@ -141,10 +140,8 @@ jobs:
         echo "Current Path:" $PWD
         ls -l -A
         echo "========================================"
-
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
-
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
@@ -170,8 +167,6 @@ jobs:
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
         
-
-
     
 # 定制标签
     - name: Generate release tag
@@ -180,26 +175,27 @@ jobs:
       run: |
           touch release.txt
           cat >> release.txt << EOF    
-          1、源码：${{ env.REPO_URL }}
-          2、分支：${{ env.REPO_BRANCH }}
-          3、设备：${{ env.DEVICE_NAME }}
-          # -- Build with Github Actions on ${{ env.FILE_DATE }} for ${{ env.DEVICE_NAME }} device
+          1、源码：${{ env.REPO_URL }} 分支：${{ env.REPO_BRANCH }}
+          2、设备：${{ env.DEVICE_NAME }}
+          3、编译时间：${{ env.FILE_DATE }}
+          ### -- Build with Github Actions on ${{ env.FILE_DATE }} for ${{ env.DEVICE_NAME }} device
           外链下载：
           EOF
           [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer Download (24hrs)](${{ steps.cowtransfer.outputs.url }})" >> release.txt
           [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer Download (7days)](${{ steps.wetransfer.outputs.url }})" >> release.txt          
           echo "::set-output name=status::success"
-
 # 文件组织
     - name: Remove and tar
       id: tar
-      if: (github.event.inputs.ipks == 'true' && github.event.inputs.ipks  != 'false') 
+ #     if: (github.event.inputs.ipks == 'true' && github.event.inputs.ipks  != 'false')  是点击run单独生成一个ipks，现在有独立工作流不需要了
       run: |
          echo "Current Path:" $PWD
+         cd openwrt
+         tar -czf build_results.tar.gz bin
+         mv build_results.tar.gz ${{ env.FIRMWARE }}/build_results.tar.gz
+         echo "打包完成,当前目录文件有："
          ls
-         cd openwrt && tar -czf buildsresults.tar.gz bin
-         ls
-         echo "打包完成"
+  #tar -czf ${{ env.FIRMWARE }}/build-results.tar.gz openwrt/bin
 # rm ${{ env.FIRMWARE }}/*.buildinfo -r 在上面上传清理
 # 插件全编译执行 find openwrt/bin/packages/mipsel_24kc -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/mipsel_24kc-IPK.tar.gz 
 
@@ -210,20 +206,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}${{ env.DEVICE_NAME }}
+        tag_name: ${{ env.DEVICE_NAME }}_${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
 
-# # 清理发行
-#     - name: Remove Old Release
-#       uses: dev-drprasad/delete-older-releases@v0.1.0
-#       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-#       with:
-#         keep_latest: 10
-#         delete_tags: true
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
