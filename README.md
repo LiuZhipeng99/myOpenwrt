@@ -2,6 +2,7 @@
 
 **[原项目](https://github.com/P3TERX/Actions-OpenWrt)** 含配置和进阶教程
 
+**[编译过程](https://www.cnblogs.com/elewei/p/9353908.html)
 
 ## 编译的IPK集合
 
