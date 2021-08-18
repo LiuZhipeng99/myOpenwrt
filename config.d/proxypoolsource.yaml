@@ -7,13 +7,49 @@
 - type: webfuzzsub
   options:
     url: https://raw.githubusercontent.com/iam7cn/Clash/main/Subscription/sub.list
+- type: webfuzzsub
+  options:
+    url: https://fanqiang.network/shadowsocks-servers   #来自https://fanqiang.network/
+    
+- type: subscribe
+  options:
+    url: https://raw.fastgit.org/freefq/free/master/v2    # freefq的项目
+- type: subscribe
+  options:
+    url: https://jiang.netlify.app/   # 二爷翻墙
+    
+# 网页模糊抓取
+- type: webfuzz
+  options:
+    url: https://merlinblog.xyz/wiki/freess.html
+- type: webfuzz
+  options:
+    url: https://free-ss.site/
+- type: webfuzz
+  options:
+    url: https://zfjvpn.gitbook.io/123/
+- type: webfuzz
+  options:
+    url: https://lightyearvpn.com/zh/free-vpn
+- type: webfuzz
+  options:
+    url: https://www.zhimianfei.com/
+- type: webfuzz     #两个翻墙网的
+  options:    
+    url: https://www.freefq.com/d/file/free-ss/20210817/c70fab7a3ac59e2970ce358e1d7a6b56.htm
+- type: webfuzz
+  options:    
+    url: https://www.freefq.com/d/file/free-xray/20210810/c97eb3423b786e30befa00e22da26f15.htm
+
+    
+#@ 订阅，多是其他抓取站点（套娃！）
 ## 谷歌搜索返回订阅列表不知道行不行 ！！点进去发现全是节点池网站。看到个72源的网站还开启测速赶紧mark下
-## 爬半天，网站又多干脆不用
+## 爬半天，网站又多干脆不用，还是套娃
 ##- type: webfuzzsub
 ##  options:
 ##    url: https://www.google.com/search?q=inurl%3Aclash%2Fproxies
-# 手动输个猛的：https://sspool.nl/ 和 www.233660.xyz 都测试后者节点少些
-# 最后决定就用这两个测速抓取节点的 套娃！！
+# 前者节点过万后者两千，，
+# 先两个测速站
 - type: clash
   options:
     url: https://sspool.nl/clash/proxies #config 反而抓不到
@@ -22,16 +58,13 @@
   options:
     url: https://www.233660.xyz/clash/proxies 
 
+# 其他抓取站点
 - type: clash
   options:
-    url: https://www.qunima.cc/clash/proxies 
-# https://www.qunima.cc/ 没测速但有88个源
-
-
-
+    url: https://fq.lonxin.net/clash/proxies
 - type: clash
   options:
-    url: https://gitlab.com/free9999/ipupdate/-/raw/master/clash/config.yaml
+    url: https://www.qunima.cc/clash/proxies   #没测速但有88个源
 - type: clash
   options:
     url: https://proxypool.fly.dev/clash/proxies
@@ -51,32 +84,28 @@
   options:
     url: https://etproxypool.ga/clash/proxies	
 
+
 - type: clash
   options:
-    url: https://raw.githubusercontent.com/du5/free/master/file/0909/Clash.yaml
+    url: https://gitlab.com/free9999/ipupdate/-/raw/master/clash/config.yaml   #ipupdate项目的
+- type: clash
+  options:
+    url: https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml 
+- type: clash
+  options:
+    url: https://raw.githubusercontent.com/du5/free/master/file/0909/Clash.yaml   #又一个分享项目
+- type: clash
+  options:
+    url: https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0111clash.yml
+
+
 
 # 订阅链接
-#- type: subscribe
-#  options:
-#    url: https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray
-- type: clash
+- type: subscribe
   options:
-    url: https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml
-# 网页模糊抓取
-- type: webfuzz
-  options:
-    url: https://merlinblog.xyz/wiki/freess.html
-   
-- type: webfuzz
-  options:
-    url: https://zfjvpn.gitbook.io/123/
+    url: http://ss.pythonic.life/full/subscribe
+#   url: https://raw.githubusercontent.com/ssrsub/ssr/master/v2ray
 
-- type: webfuzz
-  options:
-    url: https://lightyearvpn.com/zh/free-vpn
-- type: webfuzz
-  options:
-    url: https://www.zhimianfei.com/
 
 # # 翻墙党论坛抓取
 #- type: web-fanqiangdang
@@ -91,7 +120,7 @@
 
 
 
-# tg频道抓取
+# tg频道抓取  需vps连外网
 - type: tgchannel
   options:
    channel: ssrList
@@ -166,4 +195,3 @@
   options:
    channel: cnhumanright99
    num: 200
-   
