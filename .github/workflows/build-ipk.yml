@@ -9,7 +9,7 @@
 
 #sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-1804)
 
-name: Build IPK
+name: Build IPK - test
 
 on:
   repository_dispatch:
@@ -25,7 +25,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE2: ./config.d/ipks-x86.config # 由于后面指定了目录，所以config只能增多减少会报错
-  CONFIG_FILE: ./config.d/ipks-mipsel_24kc.config
+  CONFIG_FILE: ./config.d/HC5661.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
