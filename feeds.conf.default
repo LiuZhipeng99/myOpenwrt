@@ -9,7 +9,8 @@ src-git kenzopackeages https://github.com/kenzok8/openwrt-packages
 # src-git helloworld https://github.com/fw876/helloworld
 # passwall依赖
 src-git small https://github.com/kenzok8/small 
-
+# 不同于lede中三合一的网易云解锁
+src-git netease https://github.com/immortalwrt/luci-app-unblockneteasemusic.git
 
 #src-git video https://github.com/openwrt/video.git
 #src-git targets https://github.com/openwrt/targets.git
