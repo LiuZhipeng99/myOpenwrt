@@ -1,0 +1,41 @@
+# your domain
+#domain: proxypool.zhipengliu.cn
+domain: proxypool.zhipengliu.cn    #订阅转换到heroku的测速节点上，域名被拦截了没ssl也没备案，默认链接是https不能直接用ip所以将就了
+port: 80              # default 12580
+
+# source list file
+source-files:
+  # use local file
+  - ./source.yaml
+  # use web file 这个连接不到curl不行wget行，所以写到run脚本里
+#  - https://raw.githubusercontent.com/kivid/myOpenwrt/main/config.d/proxypoolsource.yaml
+
+
+# ======= 可选项，留空使用default值  =======
+
+# postgresql database info
+# 修改此数据库配置才可以密码登录-外部登录
+
+#database_url: "用容器的启动脚本替换"
+
+#  1有一万个节点没测速的(可以用 了随便也用到了tg频道的
+
+
+
+# interval between each crawling
+crawl-interval: 1440       # v0.5.x default 60 (minutes)
+crontime:              # v0.4.x default 60 (minutes). Deprecated in the newest version
+
+# speed test
+speedtest: true      # default false. Warning: this will consume large network resources.
+speedtest-interval:   # default 720 (min)
+connection: 2          # default 5. The number of speed test connections simultaneously
+timeout: 5        # default 10 (seconds).
+## active proxy speed test
+active-interval: 120     # default 60 (min)
+active-frequency:     # default 100 (requests per interval)
+active-max-number: # default 100. If more than this number of active proxies, the extra will be deprecated by speed
+
+# cloudflare api
+cf_email: ""
+cf_key: ""
