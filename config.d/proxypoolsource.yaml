@@ -21,6 +21,10 @@
 # 网页模糊抓取
 - type: webfuzz
   options:
+    url: http://feeds.feedburner.com/mattkaydiary/pZjG
+
+- type: webfuzz
+  options:
     url: https://merlinblog.xyz/wiki/freess.html
 - type: webfuzz
   options:
