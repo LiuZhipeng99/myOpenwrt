@@ -53,6 +53,28 @@
 - type: clash
   options:
     url: https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0111clash.yml
+    
+  #，来自G hosaao r群维护的订阅  
+- type: clash
+  options:
+    url: https://git.io/JDIHI
+- type: clash
+  options:
+    url: https://git.io/JDIkb
+- type: clash
+  options:
+    url: https://git.io/JDIJB
+- type: clash
+  options:
+    url: https://git.io/JMRUF
+- type: clash
+  options:
+    url: https://git.io/JMmNx
+- type: clash
+  options:
+    url: https://git.io/JXxhV
+    
+    
 
 
 
