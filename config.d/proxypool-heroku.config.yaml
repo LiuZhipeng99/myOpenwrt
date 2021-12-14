@@ -14,7 +14,7 @@ source-files:
 
 
 # postgresql database info
-database_url: "postgres://postgres:6666@159.138.153.86:5432/proxypool2" # 为了避免冲突不连
+# database_url: "" # 为了避免冲突不连会默认使用herokuapp自附带的postgres数据库
 
 # interval between each crawling
 crawl-interval:       # v0.5.x default 60 (minutes)
