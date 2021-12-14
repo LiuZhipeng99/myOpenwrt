@@ -15,11 +15,10 @@ source-files:
 
 # postgresql database info
 # 修改此数据库配置才可以密码登录-外部登录
-
 #database_url: "用容器的启动脚本替换"
 database_url: "postgres://ixxwsfkh:Npej1-3LpzXCR9DVJe0j9hF69heFspdI@john.db.elephantsql.com:5432/ixxwsfkh"
 # elephantsql提供的20m免费空间，共享数据库：postgres://hvycjfbu:xVPOX-3ftwx3Mi9DJ_u-iBaN8bIwJXQt@john.db.elephantsql.com:5432/hvycjfbu
-
+# 另外heroku也提供免费的2w行postgre空间
 
 
 #  1有一万个节点没测速的(可以用 了随便也用到了tg频道的
