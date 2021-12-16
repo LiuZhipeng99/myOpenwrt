@@ -32,7 +32,9 @@
 - type: clash
   oprtions:
     url: https://huixing.online/link/drLSbQ7SLwpFYqRd?clash=2
-
+- type: clash
+  options:
+    url: https://script.google.com/macros/s/AKfycbyH4KBvCaWzn6IHRtt5GlzgIpA53wW9gXIuSTimB80akjATfZT9eh4Cx-vcKSrLUMRW/exec
         
 
 
