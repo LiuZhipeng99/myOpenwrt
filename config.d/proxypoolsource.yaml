@@ -257,3 +257,7 @@
   options:
    channel: vpnhat
    num: 200
+- type: tgchannel
+  options:
+    channel: hkaa0
+    num: 200
