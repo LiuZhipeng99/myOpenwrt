@@ -1,6 +1,41 @@
 # 提示：此文件包含尽可能多的源，以供可测速国内vps测速
 # 获取来源说明：最简单的就是找其他proxypool站的节点，其次是一些在维护的订阅（个人的自己用），在更新的博客分享节点的页面等。添加来源前find确认下
 
+# 机场的临时白给/tg群分享的订阅：
+- type: subscribe
+    options:
+        url: https://paste.gg/p/anonymous/1e236810b5be44b88c1c7711a0bc65a7/files/e2c7c3bbddf440d9be7a9eda55d38d54/raw
+- type: subscribe
+    options:
+        url: https://paste.gg/p/anonymous/0f6a744484f74acf9a962702772d9b5a/files/eb6ebda8183149de8334444c99488b70/raw
+- type: subscribe
+    options:
+        url: https://paste.gg/p/anonymous/f8cfbd7bb18a453b9f0ff55f18b07b4a/files/317d7625c46144da8f3b5aa0b7472721/raw
+- type: subscribe
+    options:
+        url: https://paste.gg/p/anonymous/37114db26af742418a90d3ccdaaf6f03/files/a7bab7ab41c24d82b315322a97055d43/raw
+ - type: clash
+    oprtions:
+        url: https://paste.gg/p/anonymous/3322a546853e4d2490849b732874dfcc/files/6a211f5d74cc41709a040efee4fae3fe/raw
+  - type: clash
+    oprtions:       
+        url: https://paste.gg/p/anonymous/5c077272b838477087acfe023495c2e6/files/3fccac64a73d4e2f82b452ec083612fa/raw
+- type: clash
+    oprtions:        
+        url: https://suo.yt/32DF4T3
+- type: clash
+    options:
+        url: https://paste.gg/p/anonymous/cc4a198c5ed049ef9334b0828a9e9051/files/611ffef200a74d4e8b24ac8af872733c/raw
+- type: clash
+    options:
+        url: https://niaocloud-rss.com/link/5024oNVw4s60Bfjd?clash=1
+- type: clash
+    oprtions:
+        url: https://huixing.online/link/drLSbQ7SLwpFYqRd?clash=2
+
+        
+
+
     
 #@ 订阅，多是其他抓取站点（套娃！）## 爬半天，网站又多干脆不用，还是套娃
 
@@ -217,4 +252,8 @@
 - type: tgchannel
   options:
    channel: cnhumanright99
+   num: 200
+- type: tgchannel
+  options:
+   channel: vpnhat
    num: 200
