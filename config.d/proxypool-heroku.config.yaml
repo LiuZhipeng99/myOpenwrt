@@ -5,8 +5,9 @@ port: 12580                 # default 12580
 # source list file
 source-files:
 #   # use local file
-  - ./source.yaml
+  #xx- ./source.yaml
   # use web file
+  - https://raw.githubusercontent.com/cn-xiao7/proxypool/master/config/source.yaml
   #- https://raw.githubusercontent.com/kivid/myOpenwrt/main/config.d/proxypoolsource.yaml
 
 # ======= 可选项，留空使用default值  =======
