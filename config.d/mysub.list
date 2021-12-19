@@ -25,6 +25,7 @@ https://script.google.com/macros/s/AKfycbyH4KBvCaWzn6IHRtt5GlzgIpA53wW9gXIuSTimB
 ##  options:
 ##    url: https://www.google.com/search?q=inurl%3Aclash%2Fproxies  
 #手动选的一些节点池，大多开测试抓取源也多 config抓不到
+https://fq.lonxin.net/clash/proxies 
 https://sspool.nl/clash/proxies 
 https://www.233660.xyz/clash/proxies 
 https://fq.lonxin.net/clash/proxies
