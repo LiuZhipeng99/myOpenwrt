@@ -5,9 +5,9 @@ port: 12580                 # default 12580
 # source list file
 source-files:
 #   # use local file
-#   - ./source.yaml
+  - ./source.yaml
   # use web file
-  - https://raw.githubusercontent.com/kivid/myOpenwrt/main/config.d/proxypoolsource.yaml
+  #- https://raw.githubusercontent.com/kivid/myOpenwrt/main/config.d/proxypoolsource.yaml
 
 # ======= 可选项，留空使用default值  =======
 # 虽然有速度上千兆的但发现是被墙了的节点，这里就不测速了用国内机
