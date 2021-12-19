@@ -1,121 +1,8 @@
 # 提示：此文件包含尽可能多的源，以供可测速国内vps测速
-# 获取来源说明：最简单的就是找其他proxypool站的节点，其次是一些在维护的订阅（个人的自己用），在更新的博客分享节点的页面等。添加来源前find确认下
-
-# 机场的临时白给/tg群分享的订阅：
-- type: subscribe
-  options:
-    url: https://paste.gg/p/anonymous/1e236810b5be44b88c1c7711a0bc65a7/files/e2c7c3bbddf440d9be7a9eda55d38d54/raw
-- type: subscribe
-  options:
-    url: https://paste.gg/p/anonymous/0f6a744484f74acf9a962702772d9b5a/files/eb6ebda8183149de8334444c99488b70/raw
-- type: subscribe
-  options:
-    url: https://portx.cc/link/2VjcEl4fymUXp9DA?sub=2
-- type: subscribe
-  options:
-    url: https://paste.gg/p/anonymous/f8cfbd7bb18a453b9f0ff55f18b07b4a/files/317d7625c46144da8f3b5aa0b7472721/raw
-- type: subscribe
-  options:
-    url: https://paste.gg/p/anonymous/37114db26af742418a90d3ccdaaf6f03/files/a7bab7ab41c24d82b315322a97055d43/raw
-- type: clash
-  oprtions:
-    url: https://paste.gg/p/anonymous/3322a546853e4d2490849b732874dfcc/files/6a211f5d74cc41709a040efee4fae3fe/raw
-- type: clash
-  oprtions:       
-    url: https://paste.gg/p/anonymous/5c077272b838477087acfe023495c2e6/files/3fccac64a73d4e2f82b452ec083612fa/raw
-- type: clash
-  oprtions:  
-    url: https://suo.yt/32DF4T3
-- type: clash
-  options:
-    url: https://paste.gg/p/anonymous/cc4a198c5ed049ef9334b0828a9e9051/files/611ffef200a74d4e8b24ac8af872733c/raw
-- type: clash
-  options:
-    url: https://niaocloud-rss.com/link/5024oNVw4s60Bfjd?clash=1
-- type: clash
-  oprtions:
-    url: https://huixing.online/link/drLSbQ7SLwpFYqRd?clash=2
-- type: clash
-  options:
-    url: https://script.google.com/macros/s/AKfycbyH4KBvCaWzn6IHRtt5GlzgIpA53wW9gXIuSTimB80akjATfZT9eh4Cx-vcKSrLUMRW/exec
-        
-
-
-    
-#@ 订阅，多是其他抓取站点（套娃！）## 爬半天，网站又多干脆不用，还是套娃
-
-## 谷歌搜索返回订阅列表不知道行不行？点进去全是节点池网站。
-##- type: webfuzzsub
-##  options:
-##    url: https://www.google.com/search?q=inurl%3Aclash%2Fproxies
-# 看到个72源的网站还开启测速赶紧mark下，第一个节点过万后者两千，，
-- type: clash
-  options:
-    url: https://sspool.nl/clash/proxies #config 反而抓不到
-    
-- type: clash
-  options:
-    url: https://www.233660.xyz/clash/proxies 
-- type: clash
-  options:
-    url: https://fq.lonxin.net/clash/proxies
-- type: clash
-  options:
-    url: https://www.qunima.cc/clash/proxies   #没测速但有88个源
-- type: clash
-  options:
-    url: https://proxypool.fly.dev/clash/proxies
-- type: clash
-  options:
-    url: https://hello.stgod.com/clash/proxies
-- type: clash
-  options:
-    url: https://ss.dswang.ga:8443/clash/proxies
-- type: clash
-  options:
-    url: http://8.135.91.61/clash/proxies
-- type: clash
-  options:
-    url: https://etproxypool.cf/clash/proxies	
-- type: clash
-  options:
-    url: https://etproxypool.ga/clash/proxies	
-
-- type: clash
-  options:
-    url: https://gitlab.com/free9999/ipupdate/-/raw/master/clash/config.yaml   #ipupdate项目的
-- type: clash
-  options:
-    url: https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml 
-- type: clash
-  options:
-    url: https://raw.githubusercontent.com/du5/free/master/file/0909/Clash.yaml   #又一个分享项目
-- type: clash
-  options:
-    url: https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0111clash.yml
-    
-  #，来自G hosaao r群维护的订阅  
-- type: clash
-  options:
-    url: https://git.io/JDIHI
-- type: clash
-  options:
-    url: https://git.io/JDIkb
-- type: clash
-  options:
-    url: https://git.io/JDIJB
-- type: clash
-  options:
-    url: https://git.io/JMRUF
-- type: clash
-  options:
-    url: https://git.io/JMmNx
-- type: clash
-  options:
-    url: https://git.io/JXxhV
-    
-    
-
+# 这里使用自己维护的外部文件来收集，操作简单点
+- type: webfuzzsub
+  options:  # 镜像https://cdn.jsdelivr.net/gh/kivid/myOpenwrt@main/config.d/mysub.list
+    url: https://raw.githubusercontent.com/kivid/myOpenwrt/main/config.d/mysub.list  
 
 
 # 订阅链接
@@ -147,7 +34,7 @@
     url: https://raw.githubusercontent.com/du5/free/master/sub.list
 - type: webfuzzsub
   options:
-    url: https://raw.githubusercontent.com/iam7cn/Clash/main/Subscription/sub.list
+    url: https://cdn.jsdelivr.net/gh/iam7cn/Clash@main/Subscription/sub.list # 这个项目挺多的
 - type: webfuzzsub
   options:
     url: https://fanqiang.network/shadowsocks-servers   #来自https://fanqiang.network/
@@ -158,7 +45,6 @@
 - type: webfuzz
   options:
     url: http://feeds.feedburner.com/mattkaydiary/pZjG
-
 - type: webfuzz
   options:
     url: https://merlinblog.xyz/wiki/freess.html
@@ -183,7 +69,7 @@
 
 
 
-# tg频道抓取  需vps连外网
+# tg频道抓取  需连外网
 - type: tgchannel
   options:
    channel: ssrList
