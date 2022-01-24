@@ -28,7 +28,7 @@ jobs:
 #       options: --cpus 1
     steps:
       - name: run
-        run: docker ps
+        run: top
 # jobs: 
 #   autorun:
 #     runs-on: ubuntu-20.04
