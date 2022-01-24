@@ -1,0 +1,24 @@
+name: autoepic
+on:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 12 * * 1'
+
+jobs:
+  autorun:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: use docker image
+        uses: docker://alpine:3.8
+      - name: test
+        run: docker ps
