@@ -19,7 +19,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: use docker image
-        uses: docker://luminoleon/epicgames
+        uses: docker://luminoleon/epicgames-claimer
       - name: test
         run: docker images
       - name: run docker interact
