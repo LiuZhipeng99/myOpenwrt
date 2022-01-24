@@ -28,9 +28,9 @@ jobs:
 #       options: --cpus 1
     steps:
       - name: check
-        run: ls & ps -aux
+        run: ps | grep 'python'
       - name: run
-        run: date ; sleep 1m ; date
+        run: ls
 # jobs: 
 #   autorun:
 #     runs-on: ubuntu-20.04
