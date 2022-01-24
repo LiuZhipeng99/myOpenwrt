@@ -21,4 +21,4 @@ jobs:
       - name: use docker image
         uses: docker://alpine:3.8
       - name: test
-        run: docker ps
+        run: docker images
