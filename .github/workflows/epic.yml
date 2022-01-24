@@ -18,12 +18,12 @@ jobs:
       steps:
         - name: clone
           run: git clone -b main https://github.com/luminoleon/epicgames-claimer.git
-        - name: clone是异步的单独列出
-          run: ls
+        - name: clone是异步的不能cd，但单独cd切不进去
+          run: ls epicgames-claimer & cd epicgames-claimer
         - name: install_dependence
           run: sudo sh epicgames-claimer/install_dependencies.sh & pip3 install -r epicgames-claimer/requirements.txt
         - name: run_main
-          run: python3 main.py -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
+          run: python3 epicgames-claimer/main.py -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
 # jobs: 容器里没有main文件，看初始化容器貌似也覆盖了entrypoint，，
 #   my_job:
 #     runs-on: ubuntu-20.04
