@@ -27,8 +27,10 @@ jobs:
         - my_docker_volume:/volume_mount
 #       options: --cpus 1
     steps:
+      - name: check
+        run: ls & ps-aux
       - name: run
-        run: top
+        run: date ; sleep 1m ; date
 # jobs: 
 #   autorun:
 #     runs-on: ubuntu-20.04
