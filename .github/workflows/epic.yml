@@ -23,7 +23,7 @@ jobs:
         - name: install_dependence
           run: sudo sh epicgames-claimer/install_dependencies.sh & pip3 install -r epicgames-claimer/requirements.txt
         - name: run_main
-          run: python3 epicgames-claimer/main.py -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
+          run: python3 epicgames-claimer/main.py -u ${{ secrets.EPIC_USERNAME }} -p ${{ secrets.EPIC_PASSWORD }}
 # jobs: 容器里没有main文件，看初始化容器貌似也覆盖了entrypoint，，
 #   my_job:
 #     runs-on: ubuntu-20.04
