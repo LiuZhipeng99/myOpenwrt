@@ -28,7 +28,7 @@ jobs:
 #       options: --cpus 1
     steps:
       - name: check
-        run: ls & ps-aux
+        run: ls & ps -aux
       - name: run
         run: date ; sleep 1m ; date
 # jobs: 
