@@ -26,6 +26,9 @@ jobs:
       volumes:
         - my_docker_volume:/volume_mount
 #       options: --cpus 1
+    steps:
+      - name: run
+        run: docker ps
 # jobs: 
 #   autorun:
 #     runs-on: ubuntu-20.04
