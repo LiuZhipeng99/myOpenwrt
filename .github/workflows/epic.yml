@@ -11,17 +11,31 @@ on:
       - main
   schedule:
     - cron: '0 12 * * 1'
-
 jobs:
-  autorun:
+  my_job:
     runs-on: ubuntu-20.04
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: use docker image
-        uses: docker://luminoleon/epicgames-claimer
-      - name: test
-        run: docker images
-      - name: run docker interact
-        run: docker run -d luminoleon/epicgames-claimer -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
+    container:
+      image: luminoleon/epicgames-claimer
+      env:
+        NODE_ENV: development
+        TZ: Asia/Shanghai
+        EMAIL: ${{ secrets.EPIC.USERNAME }}
+        PASSWORD: ${{ secrets.EPIC.PASSWORD }}
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+#       options: --cpus 1
+# jobs: 
+#   autorun:
+#     runs-on: ubuntu-20.04
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v2
+#       - name: run docker container
+#         uses: docker://luminoleon/epicgames-claimer
+#         with:
+#           args:
+#       - name: run docker interact
+#         run: docker run -d luminoleon/epicgames-claimer -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
 
