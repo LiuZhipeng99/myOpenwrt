@@ -11,30 +11,39 @@ on:
       - main
   schedule:
     - cron: '0 12 * * 1'
+    
 jobs:
-  my_job:
-    runs-on: ubuntu-20.04
-    container:
-      image: luminoleon/epicgames-claimer
-      env:
-        NODE_ENV: development
-        TZ: Asia/Shanghai
-        EMAIL: ${{ secrets.EPIC.USERNAME }}
-        PASSWORD: ${{ secrets.EPIC.PASSWORD }}
-      ports:
-        - 80
-      volumes:
-        - my_docker_volume:/volume_mount
-#       options: --cpus 1
-    steps:
-      - name: ls
-        run: ls
-      - name: runpy
-        run: python3 -u main.py -c chromium-browser
-      - name: check
-        run: ps | grep 'python'
-      - name: wait
-        run: date ; sleep 10s ; date
+    run_py:
+      runs-on: ubuntu-20.04
+      steps:
+        - name: clone
+          run: git clone -b main https://github.com/luminoleon/epicgames-claimer.git & cd epicgames-claimer
+        - name: install_dependence
+          run: sudo sh install_dependencies.sh & pip3 install -r requirements.txt
+        - name: run_main
+          run: python3 main.py -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
+# jobs: 容器里没有main文件，看初始化容器貌似也覆盖了entrypoint，，
+#   my_job:
+#     runs-on: ubuntu-20.04
+#     container:
+#       image: luminoleon/epicgames-claimer
+#       env:
+#         NODE_ENV: development
+#         TZ: Asia/Shanghai
+#         EMAIL: ${{ secrets.EPIC.USERNAME }}
+#         PASSWORD: ${{ secrets.EPIC.PASSWORD }}
+#       ports:
+#         - 80
+#       volumes:
+#         - my_docker_volume:/volume_mount
+# #       options: --cpus 1
+#     steps:
+#       - name: ls
+#         run: ls
+#       - name: runpy
+#         run: python3 main.py -c chromium-browser
+#       - name: wait
+#         run: date ; sleep 10s ; date
 # jobs: 
 #   autorun:
 #     runs-on: ubuntu-20.04
@@ -46,5 +55,5 @@ jobs:
 #         with:
 #           args:
 #       - name: run docker interact
-#         run: docker run -d luminoleon/epicgames-claimer -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
+#         run: docker run luminoleon/epicgames-claimer -u ${{ secrets.EPIC.USERNAME }} -p ${{ secrets.EPIC.PASSWORD }}
 
