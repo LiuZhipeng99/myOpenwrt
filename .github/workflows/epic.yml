@@ -19,7 +19,7 @@ jobs:
         - name: clone
           run: git clone -b main https://github.com/luminoleon/epicgames-claimer.git
         - name: clone是异步的单独列出
-          run: cd epicgames-claimer & ls
+          run: cd epicgames-claimer/epicgames-claimer & ls
         - name: install_dependence
           run: sudo sh install_dependencies.sh & pip3 install -r requirements.txt
         - name: run_main
