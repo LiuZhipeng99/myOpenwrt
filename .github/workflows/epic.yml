@@ -27,6 +27,8 @@ jobs:
         - my_docker_volume:/volume_mount
 #       options: --cpus 1
     steps:
+      - name: runpy
+        run: python3 -u main.py -c chromium-browser
       - name: check
         run: ps | grep 'python'
       - name: run
