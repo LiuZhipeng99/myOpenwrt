@@ -1,4 +1,4 @@
-name: autoepic
+name: myworkflow
 on:
   workflow_dispatch:
     inputs:
@@ -23,16 +23,43 @@ jobs:
         - name: run code
           run: pip3 install requests & python3 freenom/run.py -u ${{ secrets.FREENOM_USERNAME }} -p ${{ secrets.FREENOM_PASSWORD }}
     epic:
-      runs-on: ubuntu-20.04
+    #使用指定版本号的好处（Ubuntu等随意
+      runs-on: ubuntu-latest 
       steps:
         - name: clone
-          run: git clone https://github.com/luminoleon/epicgames-claimer.git
-        - name: clone是异步的不能cd，但单独cd切不进去
-          run: ls epicgames-claimer & cd epicgames-claimer
-        - name: install_dependence
-          run: sudo sh epicgames-claimer/install_dependencies.sh & pip3 install -r epicgames-claimer/requirements.txt
-        - name: run_main
-          run: python3 epicgames-claimer/main.py -u ${{ secrets.EPIC_USERNAME }} -p ${{ secrets.EPIC_PASSWORD }} -ps ${{ secrets.SERVER_PUSH_KEY }}
+          run: git clone https://github.com/QIN2DIM/epic-awesome-gamer.git ./
+        - name: Set up Python 3.8
+          uses: actions/setup-python@v1
+          with:
+            python-version: 3.8
+
+        - name: Install requirements
+          run: |
+            pip install -r requirements.txt
+        - name: Scaffold Install
+          run: |
+            echo -e "EMAIL: ${{secrets.EPIC_EMAIL}}\nPASSWORD: ${{secrets.EPIC_PASSWORD}}" > src/config.yaml
+            cd src && python main.py install
+        - name: Scaffold Challenge
+          run: |
+            export LANG=zh_CN.UTF8
+            cd src && python main.py challenge
+        # 五分钟左右搬空免费商店
+        - name: Scaffold Get
+          run: |
+            export LANG=zh_CN.UTF8
+            cd src && python main.py get          
+#repo没修复chap错误     epic:
+#       runs-on: ubuntu-20.04
+#       steps:
+#         - name: clone
+#           run: git clone https://github.com/luminoleon/epicgames-claimer.git
+#         - name: clone是异步的不能cd，但单独cd切不进去
+#           run: ls epicgames-claimer & cd epicgames-claimer
+#         - name: install_dependence
+#           run: sudo sh epicgames-claimer/install_dependencies.sh & pip3 install -r epicgames-claimer/requirements.txt
+#         - name: run_main
+#           run: python3 epicgames-claimer/main.py -u ${{ secrets.EPIC_USERNAME }} -p ${{ secrets.EPIC_PASSWORD }} -ps ${{ secrets.SERVER_PUSH_KEY }}
 
 # jobs: 容器里没有main文件，看初始化容器貌似也覆盖了entrypoint，，
 #   my_job:
